@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+      - id: mysise-demo
+        uri: lb://mysise-demo  #目标地址
+        predicates:
+        - Path=/api/demo/**  #路由规则
+        filters:
+        - StripPrefix=1
+      - id: mysise-demo1
+        uri: lb://mysise-demo1  #目标地址
+        predicates:
+        - Path=/api/demo1/**  #路由规则
+        filters:
+        - StripPrefix=1
