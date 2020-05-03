@@ -29,7 +29,6 @@ public class DemoApi {
      * @author fanwenjie
      * @since 2020/5/1 9:37
      */
-
     @GetMapping("/hello")
     public String hello(){
         return iDemoService.hello();

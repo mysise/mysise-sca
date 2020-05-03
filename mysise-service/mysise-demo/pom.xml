@@ -59,7 +59,6 @@
 
 	</dependencies>
 	<build>
-		<finalName>mysise-demo</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
