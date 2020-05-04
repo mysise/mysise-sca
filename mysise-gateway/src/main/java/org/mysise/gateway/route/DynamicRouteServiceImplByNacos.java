@@ -32,7 +32,6 @@ public class DynamicRouteServiceImplByNacos{
 
     @PostConstruct
     public void initDynamicRouteServiceImplByNacos() {
-
         dynamicRouteByNacosListener("mysise-gateway-route","DEFAULT_GROUP");
     }
 

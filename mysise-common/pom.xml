@@ -8,12 +8,8 @@
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <packaging>pom</packaging>
-    <artifactId>mysise-service</artifactId>
+    <packaging>jar</packaging>
+    <artifactId>mysise-common</artifactId>
 
-    <modules>
-        <module>mysise-demo</module>
-        <module>mysise-demo1</module>
-        <module>mysise-common-service</module>
-    </modules>
+
 </project>

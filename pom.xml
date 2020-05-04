@@ -12,6 +12,7 @@
         <module>mysise-gateway</module>
         <module>mysise-service</module>
         <module>mysise-service-api</module>
+        <module>mysise-common</module>
     </modules>
 
 
