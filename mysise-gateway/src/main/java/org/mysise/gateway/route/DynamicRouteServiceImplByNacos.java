@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.route.RouteDefinition;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
 import java.util.concurrent.Executor;
 
@@ -23,13 +24,14 @@ import java.util.concurrent.Executor;
  */
 @Component
 @Slf4j
-public class DynamicRouteServiceImplByNacos {
+public class DynamicRouteServiceImplByNacos{
 
 
     @Autowired
     private DynamicRouteServiceImpl dynamicRouteService;
 
-    public DynamicRouteServiceImplByNacos() {
+    @PostConstruct
+    public void initDynamicRouteServiceImplByNacos() {
 
         dynamicRouteByNacosListener("mysise-gateway-route","DEFAULT_GROUP");
     }
@@ -44,7 +46,16 @@ public class DynamicRouteServiceImplByNacos {
             ConfigService configService= NacosFactory.createConfigService("bt.mysise.org:8848");
             String content = configService.getConfig(dataId, group, 5000);
             configService.publishConfig(dataId,group,content);
+            log.info("路由信息================================");
             log.info("路由信息：{}", content);
+            log.info("路由信息================================");
+            List<RouteDefinition> definitionList= JSON.parseArray(content,RouteDefinition.class);
+            if(null !=definitionList && definitionList.size() > 0){
+                definitionList.forEach((definition)->{
+                    log.info("update route: [{}]", JSON.toJSONString(definition));
+                    dynamicRouteService.update(definition);
+                });
+            }
             configService.addListener(dataId, group, new Listener()  {
                 @Override
                 public void receiveConfigInfo(String configInfo) {
