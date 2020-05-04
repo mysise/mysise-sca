@@ -1,5 +1,6 @@
 package org.mysise.demo.feign;
 
+import org.mysise.common.model.Result;
 import org.mysise.demo.service.IDemoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +17,7 @@ public class DemoClient implements IDemoClient {
 
     @Override
     @GetMapping(value = HELLO)
-    public String hello() {
-        return iDemoService.hello();
+    public Result<String> hello() {
+        return new Result<>(iDemoService.hello());
     }
 }

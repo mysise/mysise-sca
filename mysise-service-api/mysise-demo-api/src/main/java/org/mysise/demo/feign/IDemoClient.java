@@ -1,6 +1,7 @@
 package org.mysise.demo.feign;
 
 
+import org.mysise.common.model.Result;
 import org.mysise.demo.feign.fall.IDemoClientFallback;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,5 +22,5 @@ public interface IDemoClient {
     String HELLO = prefix + "/hello";
 
     @GetMapping(value = HELLO)
-    String hello();
+    Result<String> hello();
 }

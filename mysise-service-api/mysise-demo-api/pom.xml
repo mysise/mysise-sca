@@ -11,6 +11,11 @@
 
     <artifactId>mysise-demo-api</artifactId>
     <packaging>jar</packaging>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>

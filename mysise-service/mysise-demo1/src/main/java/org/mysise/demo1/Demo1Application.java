@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @EnableDiscoveryClient
 @ComponentScan(value = "org.mysise")
-@EnableFeignClients(value = "org.mysise.*.feign")
+@EnableFeignClients(value = "org.mysise.demo.feign")
 public class Demo1Application {
 
 	public static void main(String[] args) {

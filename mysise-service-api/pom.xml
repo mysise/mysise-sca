@@ -16,5 +16,12 @@
         <module>mysise-demo1-api</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.mysise</groupId>
+            <artifactId>mysise-common</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
 
 </project>

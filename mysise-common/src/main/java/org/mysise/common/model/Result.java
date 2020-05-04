@@ -1,11 +1,7 @@
 package org.mysise.common.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.mysise.common.constant.Constant;
 import org.mysise.common.exception.BaseException;
-import org.mysise.common.exception.CommonCode;
 
 import java.io.Serializable;
 
@@ -17,25 +13,37 @@ import java.io.Serializable;
  * @author fanwenjie
  * @since 2020/5/4 16:38
  */
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Result<T> implements Serializable {
 
-    String code = Constant.SUCCESS;
-    String message;
-    T data;
+    private String code = Constant.SUCCESS;
+    private String message;
+    private T data;
 
-    public static Result<Object> success(Object data){
-        return new Result<Object>(data);
+    public Result() {
     }
 
-    public static Result<CommonCode> fail(String code, String message){
-        return new Result<CommonCode>(code,message);
+    public String getCode() {
+        return code;
     }
 
-    public static Result<CommonCode> fail(BaseException baseCode){
-        return new Result<CommonCode>(baseCode);
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
     }
 
     public Result(T data) {
@@ -50,5 +58,14 @@ public class Result<T> implements Serializable {
     public Result(BaseException baseCode){
         this.code=baseCode.getCode();
         this.message=baseCode.getMessage();
+    }
+
+    @Override
+    public String toString() {
+        return "Result{" +
+                "code='" + code + '\'' +
+                ", message='" + message + '\'' +
+                ", data=" + data +
+                '}';
     }
 }

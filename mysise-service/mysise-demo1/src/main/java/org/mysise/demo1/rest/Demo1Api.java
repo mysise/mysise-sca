@@ -1,10 +1,16 @@
 package org.mysise.demo1.rest;
 
+import org.mysise.common.model.Result;
 import org.mysise.demo.feign.IDemoClient;
 import org.mysise.demo1.service.Demo1Service;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
 import java.util.concurrent.atomic.AtomicInteger;
 
 
@@ -15,13 +21,22 @@ public class Demo1Api {
     @Autowired
     Demo1Service demo1Service;
 
+    @Qualifier("IDemoClientFallback")
     @Autowired
     IDemoClient IDemoClient;
 
+    @Autowired
+    private RestTemplate restTemplate;
 
+    @Bean
+    @LoadBalanced
+    public RestTemplate getRestTemplate(){
+        return new RestTemplate();
+    }
 
     @GetMapping("/test")
-    String rpctest(String name){
+    public Result<String> test(String name){
+//        Result<String> result = restTemplate.getForObject("http://mysise-demo/demo/hello",Result.class);
         return IDemoClient.hello();
     }
 
