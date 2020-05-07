@@ -54,8 +54,9 @@ public class GlobalExceptionHandler implements ResponseBodyAdvice<Object> {
      * <p>
      *  数据库异常
      * <p>
-     * @author fanwenjie@cvte.com
-     * @sine  oversea v1.0.0 2019/12/10 10:48 上午
+     *
+     * @author FanWenJie
+     * @since 2020/5/7 17:11
      */
     @ExceptionHandler(value =SqlException.class)
     @ResponseBody
@@ -73,8 +74,10 @@ public class GlobalExceptionHandler implements ResponseBodyAdvice<Object> {
      * @since 2020/5/7 15:46
      */
     @ExceptionHandler(value = NoHandlerFoundException.class)
+    @ResponseBody
     public Result<CommonCode> handler(NoHandlerFoundException e){
-        return new Result<CommonCode>("404",e.getRequestURL());
+        //自定义状态码
+        return new Result<CommonCode>("404","404"+e.getRequestURL());
     }
 
     @Override
