@@ -12,6 +12,7 @@ import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.NoHandlerFoundException;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 import javax.servlet.http.HttpServletRequest;
@@ -61,6 +62,19 @@ public class GlobalExceptionHandler implements ResponseBodyAdvice<Object> {
     public Result<CommonCode> sqlExceptionHandler(HttpServletRequest req, SqlException e){
         log.error("未知异常！原因是:",e);
         return new Result<CommonCode>(e.getErrorCode(),e.getErrorMsg());
+    }
+
+    /**
+     * <p>
+     * 404
+     * <p>
+     *
+     * @author FanWenJie
+     * @since 2020/5/7 15:46
+     */
+    @ExceptionHandler(value = NoHandlerFoundException.class)
+    public Result<CommonCode> handler(NoHandlerFoundException e){
+        return new Result<CommonCode>("404",e.getRequestURL());
     }
 
     @Override
