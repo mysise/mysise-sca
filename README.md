@@ -17,4 +17,6 @@
   
   ![zipkin](doc/images/链路追踪zipkin.jpg)
   
+  ![zipkin1](doc/images/zipkin依赖图.jpg)
+  
   
