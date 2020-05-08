@@ -11,6 +11,15 @@ import org.springframework.web.reactive.function.server.*;
 import java.util.HashMap;
 import java.util.Map;
 
+
+/**
+ * <p>
+ *  异常专程json返回到客户端
+ * <p>
+ *
+ * @author FanWenJie
+ * @since 2020/5/8 15:42
+ */
 public class JsonErrorWebExceptionHandler extends DefaultErrorWebExceptionHandler {
 
     public JsonErrorWebExceptionHandler(ErrorAttributes errorAttributes, ResourceProperties resourceProperties, ErrorProperties errorProperties, ApplicationContext applicationContext) {

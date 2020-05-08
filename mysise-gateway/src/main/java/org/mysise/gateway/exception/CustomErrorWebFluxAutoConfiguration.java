@@ -25,6 +25,14 @@ import org.springframework.web.reactive.result.view.ViewResolver;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * <p>
+ *  重写网关的异常处理配置
+ * <p>
+ *
+ * @author FanWenJie
+ * @since 2020/5/8 15:42
+ */
 @Configuration
 @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.REACTIVE)
 @ConditionalOnClass(WebFluxConfigurer.class)

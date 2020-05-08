@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * <p>
- *  开启nacos 权重方式负载均衡
+ *  开启Nacos 权重方式负载均衡
  * <p>
  *
  * @author FanWenJie
@@ -19,5 +19,4 @@ public class RibbonConfig {
     public IRule ribbonRule() {
         return new NacosWeightRandomRole();
     }
-
 }
