@@ -13,6 +13,14 @@ import org.springframework.web.reactive.result.view.ViewResolver;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * <p>
+ *  sentinel 限流  不用打开
+ * <p>
+ *
+ * @author FanWenJie
+ * @since 2020/5/8 16:31
+ */
 //@Configuration
 public class GatewayConfiguration {
 
