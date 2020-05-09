@@ -33,9 +33,10 @@ public class Demo1Api {
     }
 
     @GetMapping("/test")
-    public Result<String> test(String name){
-//        Result<String> result = restTemplate.getForObject("http://mysise-demo/demo/hello",Result.class);
-        return IDemoClient.hello();
+    public Result<String> test(){
+        Result<String> result = restTemplate.getForObject("http://mysise-demo/demo/hello",Result.class);
+        Result<String> result1 =  IDemoClient.hello();
+        return result1;
     }
 
     @GetMapping("/hello")

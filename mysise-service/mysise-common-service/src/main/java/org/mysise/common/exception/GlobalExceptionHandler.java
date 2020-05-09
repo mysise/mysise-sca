@@ -47,6 +47,21 @@ public class GlobalExceptionHandler implements ResponseBodyAdvice<Object> {
         return new Result<CommonCode>(e.getErrorCode(),e.getErrorMsg());
     }
 
+    /**
+     * <p>
+     *  服务下线
+     * <p>
+     *
+     * @author FanWenJie
+     * @since 2020/5/8 19:37
+     */
+    @ExceptionHandler(value = IllegalStateException.class)
+    @ResponseBody
+    public Result<CommonCode> handler(HttpServletRequest req, BizException e){
+        log.error("发生业务异常！原因是：{}",e.getErrorMsg());
+        return new Result<CommonCode>(e.getErrorCode(),e.getErrorMsg());
+    }
+
 
 
 
