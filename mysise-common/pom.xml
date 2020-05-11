@@ -15,4 +15,13 @@
         <java.version>1.8</java.version>
     </properties>
 
+
+    <dependencies>
+    <!--  工具集合-->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.3.4</version>
+        </dependency>
+    </dependencies>
 </project>
