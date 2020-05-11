@@ -7,8 +7,9 @@ import lombok.EqualsAndHashCode;
  * <p>
  *  业务异常
  * <p>
- * @author fanwenjie@cvte.com
- * @sine  oversea v1.0.0 2019/11/14 7:10 下午
+ *
+ * @author fanwenjie@mysise.org
+ * @since 2020/5/11 22:04
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

@@ -5,8 +5,8 @@ package org.mysise.common.exception;
  *  基础错误出口类
  * <p>
  *
- * @author FanWenJie
- * @since 2020/5/4 18:45
+ * @author fanwenjie@mysise.org
+ * @since 2020/5/11 22:04
  */
 public interface BaseException {
 

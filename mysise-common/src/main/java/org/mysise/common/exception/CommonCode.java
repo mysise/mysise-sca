@@ -7,8 +7,9 @@ import org.mysise.common.constant.Constant;
  * <p>
  *  公用错误枚举类
  * <p>
- * @author fanwenjie@cvte.com
- * @sine  oversea v1.0.0 2019/11/14 7:15 下午
+ *
+ * @author fanwenjie@mysise.org
+ * @since 2020/5/11 22:01
  */
 public enum CommonCode implements BaseException {
 
