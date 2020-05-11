@@ -1,5 +1,5 @@
 # **mysise-sca**
-基于Spring cloud alibaba 的微服务脚手架 提交两个仓库测试
+基于Spring cloud alibaba 的微服务脚手架
    
 * 网关：         spring-cloud-gateway（配置中心动态路由）               
 * 注册中心：     spring-cloud-alibaba-nacos
