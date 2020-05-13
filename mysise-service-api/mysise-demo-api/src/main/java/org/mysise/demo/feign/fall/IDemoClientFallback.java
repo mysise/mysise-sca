@@ -2,6 +2,7 @@ package org.mysise.demo.feign.fall;
 
 import org.mysise.common.model.Result;
 import org.mysise.demo.feign.IDemoClient;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Service;
  * @author fanwenjie
  * @since 2020/5/1 12:04
  */
-@Service
+@Component
 public class IDemoClientFallback implements IDemoClient {
 
 
