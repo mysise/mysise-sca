@@ -23,6 +23,8 @@
         <spring-boot.version>2.2.6.RELEASE</spring-boot.version>
         <spring-cloud-alibaba.version>2.2.1.RELEASE</spring-cloud-alibaba.version>
         <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
+        <mybatis.plus.starter>3.3.2</mybatis.plus.starter>
+        <druid.starter.version>1.1.21</druid.starter.version>
     </properties>
     <dependencies>
         <dependency>
@@ -59,6 +61,32 @@
                 <version>${spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+                <exclusions>
+                    <!--排除logback-->
+                    <exclusion>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!--  mybatis plus starter-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis.plus.starter}</version>
+            </dependency>
+            <!--   mybatis plus 代码生成器依赖-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis.plus.starter}</version>
+            </dependency>
+            <!--  druid 连接池-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.starter.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

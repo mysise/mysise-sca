@@ -44,7 +44,7 @@ public class GlobalExceptionHandler implements ResponseBodyAdvice<Object> {
     @ResponseBody
     public Result<CommonCode> bizExceptionHandler(HttpServletRequest req, BizException e){
         log.error("发生业务异常！原因是：{}",e.getErrorMsg());
-        return new Result<CommonCode>(e.getErrorCode(),e.getErrorMsg());
+        return new Result<>(e.getErrorCode(),e.getErrorMsg());
     }
 
     /**
@@ -59,7 +59,7 @@ public class GlobalExceptionHandler implements ResponseBodyAdvice<Object> {
     @ResponseBody
     public Result<CommonCode> handler(HttpServletRequest req, BizException e){
         log.error("发生业务异常！原因是：{}",e.getErrorMsg());
-        return new Result<CommonCode>(e.getErrorCode(),e.getErrorMsg());
+        return new Result<>(e.getErrorCode(),e.getErrorMsg());
     }
 
 
@@ -77,7 +77,7 @@ public class GlobalExceptionHandler implements ResponseBodyAdvice<Object> {
     @ResponseBody
     public Result<CommonCode> sqlExceptionHandler(HttpServletRequest req, SqlException e){
         log.error("未知异常！原因是:",e);
-        return new Result<CommonCode>(e.getErrorCode(),e.getErrorMsg());
+        return new Result<>(e.getErrorCode(),e.getErrorMsg());
     }
 
     /**
@@ -92,7 +92,7 @@ public class GlobalExceptionHandler implements ResponseBodyAdvice<Object> {
     @ResponseBody
     public Result<CommonCode> handler(NoHandlerFoundException e){
         //自定义状态码
-        return new Result<CommonCode>("404","404"+e.getRequestURL());
+        return new Result<>("404","404"+e.getRequestURL());
     }
 
     @Override
@@ -109,6 +109,6 @@ public class GlobalExceptionHandler implements ResponseBodyAdvice<Object> {
             // 为什么要特殊处理String https://jpanj.com/2018/SpringBoot-%E4%B8%AD%E7%BB%9F%E4%B8%80%E5%8C%85%E8%A3%85%E5%93%8D%E5%BA%94/
             return objectMapper.writeValueAsString(new Result<String>(body.toString()));
         }
-        return new Result<Object>(body);
+        return new Result<>(body);
     }
 }
