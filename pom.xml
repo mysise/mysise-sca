@@ -24,7 +24,6 @@
         <spring-cloud-alibaba.version>2.2.1.RELEASE</spring-cloud-alibaba.version>
         <mybatis.plus.starter>3.3.2</mybatis.plus.starter>
         <druid.starter.version>1.1.21</druid.starter.version>
-<!--        <spring-cloud.version>Hoxton.SR1</spring-cloud.version>-->
         <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
     </properties>
     <dependencies>
