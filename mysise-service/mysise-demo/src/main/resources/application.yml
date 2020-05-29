@@ -53,3 +53,6 @@ logging:
   level:
     com.baomidou.mybatisplus.samples.quickstart: debug
   config: classpath:log4j2.xml
+feign:
+  sentinel:
+    enabled: true

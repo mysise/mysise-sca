@@ -4,6 +4,7 @@ import org.mysise.common.model.Result;
 import org.mysise.demo.feign.IDemoClient;
 import org.mysise.demo1.service.Demo1Service;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -4,3 +4,6 @@ spring:
       transport:
         dashboard: localhost:8858
       eager: true
+feign:
+  sentinel:
+    enabled: true
