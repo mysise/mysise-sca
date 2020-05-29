@@ -42,7 +42,7 @@ public class DynamicRouteServiceImplByNacos{
      */
     public void dynamicRouteByNacosListener(String dataId, String group){
         try {
-            ConfigService configService= NacosFactory.createConfigService("bt.mysise.org:8848");
+            ConfigService configService= NacosFactory.createConfigService("localhost:8848");
             String content = configService.getConfig(dataId, group, 5000);
             configService.publishConfig(dataId,group,content);
             log.info("路由信息================================");
