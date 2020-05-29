@@ -5,6 +5,7 @@ import org.mysise.demo.service.IDemoService;
 import org.mysise.demo.service.IIndexTestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -19,6 +20,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @since 2020/5/1 9:36
  */
 @RestController
+@RequestMapping(value = "/api/demo")
 public class DemoApi {
 
     AtomicInteger integer = new AtomicInteger();
