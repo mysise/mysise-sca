@@ -20,7 +20,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @since 2020/5/1 9:36
  */
 @RestController
-@RequestMapping(value = "/api/demo")
+@RequestMapping(value = "/demo")
 public class DemoApi {
 
     AtomicInteger integer = new AtomicInteger();

@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 
 @RestController
-@RequestMapping("/api/demo1")
+@RequestMapping("/demo1")
 public class Demo1Api {
 
     AtomicInteger id = new AtomicInteger(1);
