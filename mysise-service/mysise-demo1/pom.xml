@@ -12,7 +12,7 @@
 	<artifactId>demo1</artifactId>
 	<version>1.0.0</version>
 	<name>mysise-demo1</name>
-	<description>Demo1 project for Spring Boot</description>
+	<description>Demo1 project</description>
 
 	<dependencies>
 		<dependency>
