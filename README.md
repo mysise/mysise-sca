@@ -7,7 +7,7 @@
 * 限流熔断       spring-cloud-alibaba-sentinel
 * 链路追踪：     spring-cloud-starter-zipkin
 * 分布式事务：   seata（未完成） 
-* orm：         mybatis-plus（未完成）   
+* orm：         mybatis-plus  
 * 认证/授权：    mysise-auth （未完成）   
 
 
