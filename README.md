@@ -11,7 +11,6 @@
 * 认证/授权：    mysise-auth （未完成）   
 
 
-
   ![注册中心](doc/images/注册中心.jpg)
   
   ![配置中心](doc/images/配置中心.jpg)
