@@ -2,8 +2,8 @@
 基于Spring cloud alibaba 的微服务脚手架
    
 * 网关：         spring-cloud-gateway（配置中心动态路由）               
-* 注册中心：     spring-cloud-alibaba-nacos
-* 配置中心：     spring-cloud-alibaba-nacos
+* 注册中心：     spring-cloud-alibaba-Nacos
+* 配置中心：     spring-cloud-alibaba-Nacos
 * 限流熔断       spring-cloud-alibaba-sentinel
 * 链路追踪：     spring-cloud-starter-zipkin
 * 分布式事务：   seata（未完成） 
